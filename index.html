@@ -496,11 +496,16 @@ svg.append("g")
 
 /* Mixpanel Query */
 MP.api.topEvents({}).done(function(results) {
-    console.log('top events\n', results.values());
+    for (var key in results.values()) {
+      if (results.values().hasOwnProperty(key)) {
+           console.log(key);
+      }
+    }
 });
 /* End Mixpanel Query */
 
-var root = {}
+
+var root = {"name":"flare", "children"[{}]};
 
   partition.nodes(root);
   x.domain([0, root.value]).nice();
