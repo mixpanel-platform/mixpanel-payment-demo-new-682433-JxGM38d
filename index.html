@@ -499,13 +499,15 @@ MP.api.topEvents({}).done(function(results) {
     var eventList = [];
     for (var key in results.values()) {
       if (results.values().hasOwnProperty(key)) {
-           eventList.add(results.values()[key]);
+          event = {};
+          event["name"] = results.values()[key];
+          event["size"] = 100;
+          eventList.add(event);
       }
     }
 
 
-
-var root = {"name":"flare", "children":[{}]};
+var root = {"name":"flare", "children":eventList};
 
   partition.nodes(root);
   x.domain([0, root.value]).nice();
