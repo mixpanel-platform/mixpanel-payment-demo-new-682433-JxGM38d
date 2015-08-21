@@ -455,23 +455,29 @@ rect.background {
 *///END EXAMPLE
 
 /* Mixpanel Query */
-var root = {"name":"flare", "children":[]};
+
 
 
 MP.api.events('Create Account', 'Transaction', 'Cash out', 'Add Payment Method', 'Add Friends', 'Make First Transcation',  {}).done(function(results) {
+    var root = {"name":"flare", "children":[]};
     var eventList = [];
     for (var key in results.values()) {
       if (results.values().hasOwnProperty(key)) {
+        var event = {};
+        var children = [];
+        event['name'] = key;
         console.log(results.values()[key]);
-          //event = {};
-          //event["name"] = results.values()[key];
-          //event["size"] = 100;
-          //eventList.push(event);
+        for(var key2 in results.values()[key]){
+          event2 = {};
+          event2['name'] = key2;
+          event2['size'] = results.values()[key][key2]
+        }
+        event['children'] = children;
+        eventList.push(event);
       }
     }
-    
-    //root['children'] = eventList;
-    //buildChart(root);
+    root['children'] = eventList;
+    buildChart(root);
 });
 
 function buildChart(root){
