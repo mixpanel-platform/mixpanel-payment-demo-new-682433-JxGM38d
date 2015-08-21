@@ -124,7 +124,7 @@ svg.append("g")
 
 
 
-  var root = {}
+  var root = {"name":"flare", "children":[{"name":"analytics","children":[{"name":"child1","size":200}]}]};
 
   partition.nodes(root);
   x.domain([0, root.value]).nice();
