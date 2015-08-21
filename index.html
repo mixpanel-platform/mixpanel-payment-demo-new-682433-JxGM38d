@@ -111,7 +111,7 @@ svg.append("g")
     .attr("y1", "100%");
 
 
-// BEGIN EXAMPLE
+/* BEGIN EXAMPLE
   var root = {
  "name": "flare",
  "children": [
@@ -492,7 +492,15 @@ svg.append("g")
   }
  ]
 };
-//END EXAMPLE
+*///END EXAMPLE
+
+/* Mixpanel Query */
+MP.api.topEvents({from: 'today'}).done(function(results) {
+    console.log('top events\n', results.values());
+});
+/* End Mixpanel Query */
+
+var root = {}
 
   partition.nodes(root);
   x.domain([0, root.value]).nice();
