@@ -466,7 +466,7 @@ MP.api.events('Create Account', 'Transaction', 'Cash out', 'Add Payment Method',
         var event = {};
         var children = [];
         event['name'] = key;
-        console.log(results.values()[key]);
+        //console.log(results.values()[key]);
         for(var key2 in results.values()[key]){
           event2 = {};
           event2['name'] = key2;
@@ -477,6 +477,7 @@ MP.api.events('Create Account', 'Transaction', 'Cash out', 'Add Payment Method',
       }
     }
     root['children'] = eventList;
+    console.log(root);
     buildChart(root);
 });
 
