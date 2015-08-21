@@ -466,9 +466,15 @@ MP.api.topEvents({}).done(function(results) {
           eventList.push(event);
       }
     }
+    
     root['children'] = eventList;
     buildChart(root);
 });
+
+MP.api.events('Create Account', 'Transaction', 'Cash out', 'Add Payment Method', 'Add Friends', 'Make First Transcation',  {}).done(function(results) {
+    console.log('got results', results.values());
+});
+
 function buildChart(root){
 /* Data grabbed, generate other stuff */
 
