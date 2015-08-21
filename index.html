@@ -496,13 +496,13 @@ svg.append("g")
 
 /* Mixpanel Query */
 MP.api.topEvents({}).done(function(results) {
+    var eventList = [];
     for (var key in results.values()) {
       if (results.values().hasOwnProperty(key)) {
-           console.log(key);
+           eventList.add(results.values()[key]);
       }
     }
-});
-/* End Mixpanel Query */
+
 
 
 var root = {"name":"flare", "children":[{}]};
@@ -677,6 +677,8 @@ function stack(i) {
   };
 }
 
+
+});
 </script>
   
   </body>
