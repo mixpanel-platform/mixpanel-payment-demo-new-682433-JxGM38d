@@ -456,23 +456,22 @@ rect.background {
 
 /* Mixpanel Query */
 var root = {"name":"flare", "children":[]};
-MP.api.topEvents({}).done(function(results) {
+
+
+MP.api.events('Create Account', 'Transaction', 'Cash out', 'Add Payment Method', 'Add Friends', 'Make First Transcation',  {}).done(function(results) {
     var eventList = [];
     for (var key in results.values()) {
       if (results.values().hasOwnProperty(key)) {
-          event = {};
-          event["name"] = results.values()[key];
-          event["size"] = 100;
-          eventList.push(event);
+        console.log(results.values()[key]);
+          //event = {};
+          //event["name"] = results.values()[key];
+          //event["size"] = 100;
+          //eventList.push(event);
       }
     }
     
-    root['children'] = eventList;
-    buildChart(root);
-});
-
-MP.api.events('Create Account', 'Transaction', 'Cash out', 'Add Payment Method', 'Add Friends', 'Make First Transcation',  {}).done(function(results) {
-    console.log('got results', results.values());
+    //root['children'] = eventList;
+    //buildChart(root);
 });
 
 function buildChart(root){
