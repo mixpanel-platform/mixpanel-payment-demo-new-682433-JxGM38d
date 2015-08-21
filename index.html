@@ -82,6 +82,12 @@
       <div id="graph"></div>
     </div>
     <div id="table"></div>
+    
+    <br clear="all" />
+    <div>
+        <span id="speedometer"></span>
+    </div>
+    
     <script>
       var eventSelect = $('#eventSelect').MPEventSelect();
       var propSelect  = $('#propSelect').MPPropertySelect();
@@ -112,10 +118,6 @@
       propSelect.on('change', runQuery);
       dateSelect.on('change', runQuery);
     </script>
-    <br clear="all" />
-    <div>
-        <span id="speedometer"></span>
-    </div>
     
     <script>
         var svg = d3.select("#speedometer")
