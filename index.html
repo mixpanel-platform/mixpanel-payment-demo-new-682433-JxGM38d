@@ -471,7 +471,8 @@ MP.api.events('Create Account', 'Transaction', 'Cash out', 'Add Payment Method',
         for(var key2 in results.values()[key]){
           event2 = {};
           event2['name'] = key2;
-          event2['size'] = results.values()[key][key2]
+          event2['size'] = results.values()[key][key2];
+          children.push(event2);
         }
         event['children'] = children;
         eventList.push(event);
