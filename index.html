@@ -122,14 +122,13 @@ svg.append("g")
   .append("line")
     .attr("y1", "100%");
 
-/*
-d3.json("readme.json", function(error, root) {
-  if (error) throw error;
+
+
+  var root = {}
 
   partition.nodes(root);
   x.domain([0, root.value]).nice();
   down(root, 0);
-});*/
 
 function down(d, i) {
   if (!d.children || this.__transition__) return;
